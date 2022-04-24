@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.zalrjcher.devflow.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.zalrjcher.devflow.MyBundle
 
 class MyApplicationService {
 
