@@ -1,4 +1,13 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<!--
+idea插件相关组件介绍
+1.action 可以监听idea菜单和工具栏的onclick
+通过idea new plugin devkit可以创建一个action
+2.extensions 继承idea的类，扩展idea已有的功能
+通过在META——INF/plugin.xml 来添加
+3.service
+
+-->
 <idea-plugin>
     <id>com.github.zalrjcher.devflow</id>
     <name>devflow</name>
@@ -10,7 +19,10 @@
         <applicationService serviceImplementation="com.github.zalrjcher.devflow.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.zalrjcher.devflow.services.MyProjectService"/>
     </extensions>
-
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="com.github.zalrjcher.devflow.ui.MyToolWindowFactory"/>
+    </extensions>
     <applicationListeners>
         <listener class="com.github.zalrjcher.devflow.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
